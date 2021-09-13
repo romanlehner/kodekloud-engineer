@@ -15,7 +15,7 @@ Container name should be fieldref-container, use image httpd preferable latest t
 Define Four environment variables as mentioned below:
 a.) The first env should be named as NODE_NAME, set valueFrom fieldref and fieldPath should be spec.nodeName.
 
-b.) The second env should be named as POD_NAME, set valueFrom fieldref and fieldPath should be metadata.name.
+b.) The second env should be named as POD_NAME, set valueFrom fieldref and fieldPath should be `metadata.name`.
 
 c.) The third env should be named as POD_IP, set valueFrom fieldref and fieldPath should be status.podIP.
 
