@@ -7,10 +7,9 @@ The deployment name is nginx-phpfpm-dp and service name is nginx-service. Figure
 
 # Solution
 
-1. Check the loadbalancer service and notice the port that accepts requests
 1. Check the nginx listener config in the config map
-1. Make sure the service definition matches the port for the loadbalancer and the targetport for the nginx listener
+1. Make sure the `targetPort` in the service resource is set to the nignx listener port.
 1. Check the config map for errors (spelling mistake `index.ph p` should be `index.php`)
 1. Reload the deployment `kubectl rollout restart deployment nginx-phpfpm-dp`
 1. Copy the index.php file into the pod `kubectl cp /tmp/index.php <pod>:/var/www/html`
-1. Confirm the application works as expected from the kodekloud interface by view port `30008`
+1. Confirm the application works as expected from the kodekloud interface on port `30008`
