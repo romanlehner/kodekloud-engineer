@@ -15,6 +15,11 @@ Create a node port type service named web-devops using node port 30008 to expose
 
 **Note: By the time of solving this challenge, the hostpath of the volume was empty. I created my own index.html file just in case the system is evaluating the task based on the service response.
 
+    echo 'Welcome to DatacenterCorp Industries!' > index.html
+    kubectl cp index.html <pod>:/var/www/html
+    
+Here the yaml that need to be applied first:
+
 ```yaml
 apiVersion: v1
 kind: PersistentVolume
