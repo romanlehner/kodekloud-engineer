@@ -8,7 +8,7 @@ Once issue is fixed, copy /home/thor/index.php file from jump host into nginx-co
 
 # Solution
 
-Describe the pod and check the volume mounts as well as the config map. The config map shows that the root document is configured to be `/var/www/html`. In the pod one of the containers has a different path configured as `mountPath`.
+Describe the pod and check the volume mounts as well as the config map. The config map shows that the root document is configured to be `/var/www/html`. In the pod, one of the containers has a different path configured as `mountPath`. Make sure the mount paths of all containers are the same as in the configmap.
 
 Pods need to be destroyed and recreated to accept changes. First extract the current config:
 
